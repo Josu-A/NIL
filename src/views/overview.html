@@ -1,0 +1,91 @@
+<div class="content-container">
+    <h2 class="heading">
+        [c:!hascomics]
+            Overview
+        [/]
+        [v:latestcomictitle]
+    </h2>
+    [c:hascomics]
+        <div class="after-heading">
+            <div class="heading-sub">
+                <b>[v:latestcomicposttime]</b>
+                [c:usechapters] <!-- this one checks if the webcomic uses chapters -->
+                    [c:haschapter] <!-- this one checks if the comic strip is in a chapter -->
+                        in <a href="[v:chapterlink]#comicimagewrap">[v:chaptername]</a>
+                    [/]
+                [/]
+            </div>
+            <div id="comic-image-wrap">
+                [c:latestcomicimagetype=image]
+                    <a href="/comics/#comicimagewrap" id="latest-comic-link">
+                [/]
+                [v:latestcomicimage]
+                [c:latestcomicimagetype=image]
+                    </a>
+                [/]
+            </div>
+            <div id="comic-nav">
+                [c:!isfirstcomic]
+                    <a href="/comics/first/#comicimagewrap" rel="start" class="comic-nav-link">&lt;&lt;First</a>
+                    <a href="[v:prevcomic]#comicimagewrap" rel="prev" class="comic-nav-link">&lt;Previous</a>
+                [/]
+                <!-- comic dropdown -->
+            <select onchange="jumpTo(this.options[selectedIndex].value);" class="comic-nav-link">
+                [l:dropdown]
+                    [c:l.newgroup]
+                        <optgroup label="[v:l.grouplabel]">
+                    [/]
+                    <option value="[v:l.url]" [c:l.is_selected]selected="selected"[/] [c:l.is_disabled]disabled="disabled"[/]>[v:l.title]</option>
+                    [c:l.endgroup]
+                        </optgroup>
+                    [/]
+                [/]
+            </select>
+            <div id="save-place">
+                <a href="#" onclick="savePlace(this,[v:latestcomicid]);return false;">Save My Place</a> | <a href="#" onclick="loadPlace();return false;">Load My Place</a>
+            </div>
+            [c:allowcomments]
+                <div class="blog-meta">
+                    <a href="/comics/#comments">[v:latestcomiccomments] Comments &gt;&gt;</a>
+                </div>
+            [/]
+        </div>
+    [/]
+    [c:hasblogs]
+        <h2 class="heading">Latest blogs:</h2>
+        <div class="after-heading">
+            [l:latestblogs]
+                <div class="blog-title">[v:l.blogtitle]</div>
+                <div class="blog-author">
+                    by [v:l.authorname]
+                    <div class="blog-time">[v:l.posttime]</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="blog-content">
+                    [c:l.avatar]
+                        <div class="avatar">
+                            <img src="[v:l.avatar]" alt="[v:l.authorname]"><br>
+                        </div>
+                    [/]
+                    [v:l.blog]
+                    <div class="clear"></div>
+                </div>
+                [c:l.allowcomments]
+                    <div class="blog-meta">
+                        <a href="[v:l.bloglink]">[v:l.comments] Comments &gt;&gt;</a>
+                    </div>
+                [/]
+            [/]
+            [c:hasmoreblogs]
+                <div class="post-comment">
+                    <a href="/blog/">Blog Archive</a>
+                </div>
+            [/]
+        </div>
+    [/]
+    [c:!hascomics]
+        [c:!hasblogs]
+            <b>Error:</b> This webcomic is empty right now. Why don't you check back later.
+        [/]
+    [/]
+</div>

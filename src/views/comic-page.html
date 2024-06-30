@@ -1,0 +1,379 @@
+<div class="content-container">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/archive/">Home</a> |
+                </li>
+                <li>
+                    <a href="[v:addsubscriptionlink]">Subscribe</a> |
+                </li>
+                <li>
+                    <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a> |
+                </li>
+            </ul>
+        </nav>
+        <h2 title="Comic [v:comicnumber] - [v:comictitle]">Comic [v:comicnumber] - [v:comictitle]</h2>
+        <p class="heading-sub">
+            <time datetime="[v:posttime]"><strong>[v:posttime]</strong></time><br>
+            [c:usechapters]
+            [c:haschapter]
+                <small>in <a href="[v:chapterlink]">[v:chaptername]</a></small>
+            [/]
+            [/]
+        </p>
+    </header>
+    <main>
+        <section id="comic-page">
+        
+            <div id="comic-image-wrap">
+            
+                <div id="backandforth" onload="resizebuttons">
+                
+                  <div class="prevoverlay">
+                    <a href="[v:prevcomic]/"></a>
+                  </div>
+                  
+                  [c:!islastcomic]
+                  <div class="nextoverlay">
+                    <a href="[v:nextcomic]/"></a> 
+                  </div>
+                  [/]
+                  
+                  
+                </div>
+                
+                       [v:comicimage]
+                
+            </div>
+            
+            <nav id="comic-nav">
+            
+                [c:!isfirstcomic]
+                    <a href="/comics/first/" rel="start" class="comic-nav-link" title="Go to first comic">&lt;&lt;First</a>
+                    <div class="space"></div>
+                    <a href="[v:prevcomic]/" rel="prev" class="comic-nav-link" title="Go to previous comic">&lt;Previous</a>
+                    <div class="space"></div>
+                [/]
+                
+                <div class="comic-nav-bar">
+                    [v:pagetitle]
+                    <ul class="comic-dropdown">
+                        [l:chapteredarchive]
+                            [c:l.newchapter]
+                                [c:!l.is_first]
+                                </ul>
+                            </li>
+                                [/]
+                            <li class="comic-nav-bar-list chapter dropdown-chapter">[v:l.chaptername] 
+                                <ul style="padding: 0">
+                            [/]
+                                    <li class="comic-nav-bar-list dropdown-page">
+                                        <a href="[v:l.comicurl]" title="[v:l.comictitle]">[v:l.comictitle]</a>
+                                    </li>
+                        [/]
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+                
+                [c:!islastcomic]
+                    <div class="space"></div>
+                    <a href="[v:nextcomic]/" rel="next" class="comic-nav-link" title="Go to next comic">Next&gt;</a>
+                    <div class="space"></div>
+                    <a href="/comics/" rel="index" class="comic-nav-link" title="Go to latest comic">Latest&gt;&gt;</a>
+                [/]
+                
+            </nav>
+            
+        </section>
+        <section class="comment-data">
+            <div id="cr-left">
+                <a href="https://comicfury.com/read/nil-canticum-bellum/archive" class="left" title="Infinite scroll view">Infinite scroll view</a>
+            </div>
+            <div id="cr-right">
+                <a href="[v:ratelink]" onclick='window.open("[v:ratelink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' id="ratelink" title="Rate this comic">Rate this comic</a>
+            </div>
+            <div id="save-place">
+                <a href="#" onclick="savePlace(this,[v:comicid]);alertsave();return false; " title="Save to my place" id="savebutton">Save My Place</a> 
+                | 
+                <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a>
+            </div>
+            <div class="clear"></div>
+        </section>
+        [c:authornotes]
+        <section id="author-notes-section">
+            <h2 class="heading">Author Notes</h2>
+            <div class="after-heading">
+                <div id="author-notes">
+                    [l:authornotes]
+                    <div class="comment">
+                        <div class="comment-data">
+                            <span class="author-data">
+                                <a href="[v:l.profilelink]" title="View [v:l.authorname]'s profile"><strong>[v:l.authorname]</strong></a>
+                            </span>
+                            <span class="post-time">[v:l.posttime]</span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="comment-content">
+                            [c:l.avatar]
+                            <div class="avatar">
+                                <img src="[v:l.avatar]" alt="[v:l.authorname]">
+                            </div>
+                            [/]
+                            [c:!l.avatar]
+                            <div class="avatar">
+                                <img src="https://nil-canticum-bellum.thecomicseries.com/files/avatargrey.png" alt="[v:l.authorname]" width="100px">
+                            </div>
+                            [/]
+                            <div class="comment-bloc">
+                                <span class="comment-text">
+                                    [v:l.comment]
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    [/]
+                    <div class="clear"></div>
+                    <span class="comment-control [v:l.controlclass]">
+                        <span class="[v:l.editclass]">
+                            <a href="[v:l.editlink]" onclick='window.open("[v:l.editlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowedit" title="Edit autor note">Edit</a>
+                        </span>
+                        <span class="[v:l.deleteclass]">
+                            <a href="[v:l.deletelink]" onclick='window.open("[v:l.deletelink]","delete","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowdelete" title="Delete autor note">Delete</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        [/]
+        [c:showpermalinks]
+        <section id="permalinks">
+            <h2 class="heading">Permalinks</h2>
+            <div class="after-heading">
+                <div id="permalinkbox">
+                    <strong>Permalink to this Page:</strong><br>
+                    <div class="perma-link-code">
+                        [v:permalink]
+                    </div>
+                    [c:comicimagetype=image]<br>
+                    <strong>Embed comic using this code:</strong><br>
+                    <div class="perma-link-code">
+                        <a href="[v:permalink]" title="Permalink to this page">
+                            <img src="[v:comicimageurl]" alt="[v:webcomicname] - [v:comictitle]">
+                        </a>
+                    </div>
+                    [/]
+                </div>
+            </div>
+        </section>
+        [/]
+        [c:showcomments]
+        [c:comments]
+        <section id="comments">
+            <h2 class="heading">Comments</h2>
+            <div class="box">
+                <div class="comments">
+                    [c:allowcomments]
+                    [c:!allowguestcomments]
+                    (You have to be registered at <a href="https://comicfury.com" title="ComicFury">ComicFury</a> to leave a comment!)
+                    [/]
+                    [/]
+                    [l:comments]
+                    <div id="[v:l.commentanchor]">
+                        <div class="comment[c:l.is_reply] reply[/]">
+                            <div class="comment-data">
+                                <span class="post-time">[v:l.posttime]</span>
+                                <div class="author-data">
+                                    <a href="[v:l.profilelink]" class="author" title="[v:l.authorname]">[v:l.authorname]</a>
+                                </div>
+                            </div>
+                            <div class="comment-content">
+                                [c:l.avatar]
+                                <div class="avatar">
+                                    <img src="[v:l.avatar]" alt="[v:l.authorname]" width="100px">
+                                </div>
+                                [/]
+                                [c:!l.avatar]
+                                <div class="avatar">
+                                    <img src="https://nil-canticum-bellum.thecomicseries.com/files/avatargrey.png" alt="[v:l.authorname]" width="100px">
+                                </div>
+                                [/]
+                                <span class="comment-text">[v:l.comment]</span>
+                                <div class="clear"></div>
+                                <div class="replyform-placeholder">[v:l.replyform]</div>
+                                <div class="comment-control [v:l.controlclass]">
+                                    <a href="[v:l.editlink]&notitle" class="[v:l.editclass]" onclick="showCommentActionForm(event, [v:l.edit_jsdata]);" target="_blank" title="Edit this comment">edit</a>
+                                    <a href="[v:l.deletelink]" class="[v:l.deleteclass]" onclick="showCommentActionForm(event, [v:l.delete_jsdata]);" target="_blank" title="Delete this comment">delete</a>
+                                    <a href="[v:l.replylink_nopopup]&notitle" onclick="showCommentActionForm(event, [v:l.reply_jsdata]);" target="_blank" title="Reply to this comment">reply</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    [/]
+                </div>
+        [/]
+        [/]
+                [c:allowcomments]
+                [c:!showcomments]
+                <section id="comments">
+                    <h2 class="heading">Comments</h2>
+                [/]
+                    <div id="comment-form">
+                        <div id="comment-iframe-overlay">
+                            <img src="https://i.imgur.com/2IfRXzq.png" id="comment-iframe-send-image">
+                        </div>
+                        [v:commentform]
+                    </div>
+                    [c:!allowguestcomments]
+                    (You have to be registered at <a href="https://comicfury.com" title="ComicFury">ComicFury</a> to leave a comment!)
+                    [/]
+                [c:!showcomments]
+                </section>
+                [/]
+                [/]
+        [c:showcomments]
+        [c:comments]
+            </div>
+        </section>
+        [/]
+        [/]
+    </main>
+</div>
+<script>
+    setInterval(resizebuttons, 100);
+
+    // Navigate though comic pages by using left/right arrow keys or A/D
+    function comicPageNavigation(){
+        document.addEventListener("keydown", function(pressedKey){
+            switch(pressedKey.code){
+                case "ArrowLeft":
+                    window.location.href="[v:prevcomic]";
+                    break;
+                case "KeyA":
+                    window.location.href="[v:prevcomic]";
+                    break;
+                case "ArrowRight":
+                    window.location.href="[v:nextcomic]";
+                    break;
+                case "KeyD":
+                    window.location.href="[v:nextcomic]";
+            }
+        });
+    }
+
+    // Expands current chapter in Comic Navigation Dropdown and highlights current page.
+    function dropdownCurrentChapterPageSet(){
+        var currentPage = location.pathname;
+        var elChildNode = document.querySelectorAll(".chapter");
+        var urlPageSliced;
+        // <![CDATA[
+        for (var i = 0; i < elChildNode.length; i++){
+        // ]]>
+            var childNode = elChildNode[i].childNodes;
+            Array.prototype.forEach.call(childNode, function(value){
+                // <![CDATA[
+                if (value.nodeType === Node.TEXT_NODE && value.nodeValue.trim()==="[v:chaptername]"){
+                // ]]>
+                    $(elChildNode[i]).children().children().toggleClass("comic-nav-bar-list-show");
+                    for (var j = 0; childNode[1].childNodes.length > j; j++){
+                        if ($(childNode[1].childNodes[j].children).attr("href") != undefined){
+                            urlPageSliced = $(childNode[1].childNodes[j].children).attr("href").slice(0, -1);
+                        } else {
+                            urlPageSliced = "";
+                        }
+                        // <![CDATA[
+                        if (($(childNode[1].childNodes[j].children).attr("href") == "/comics/1/" && currentPage == "/comics/first") || ($(childNode[1].childNodes[j].children).attr("href") == currentPage ||  urlPageSliced == currentPage) || (j == childNode[1].childNodes.length - 2 && currentPage == "/comics/")){
+                        // ]]>
+                            childNode[1].childNodes[j].style.backgroundColor = "#555555";
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    // Toggles Comic Navigation Bar Dropdown view.
+    function dropdownViewToggle(){
+        var buttonNav = document.getElementsByClassName("comic-nav-bar");
+        // <![CDATA[
+        for (var i = 0; i < buttonNav.length; i++){
+        // ]]>
+            buttonNav[i].addEventListener('click', function() {
+                if (event.target == this) {
+                    $(".comic-dropdown").toggleClass("comic-dropdown-show");
+                }
+            });
+        }
+    }
+
+    // Toggles Chapters Dropdown view.
+    function dropdownChapterViewToggle(){
+        var buttonChp = document.getElementsByClassName("chapter");
+        Array.prototype.forEach.call(buttonChp, function(chapter, index){
+            chapter.addEventListener('click', function() {
+                if (event.target == this) {
+                    // <![CDATA[
+                    for (var j = 0; j < buttonChp.length; j++){
+                    // ]]> 
+                        if(index != j){
+                            $(buttonChp[j]).children().children().removeClass("comic-nav-bar-list-show");
+                        }
+                    }
+                    $(this).children().children().toggleClass("comic-nav-bar-list-show");
+                }
+            });
+        });
+    }
+
+    // Hide Comic Navigation Bar Driodown view.
+    function dropdownChapterViewHide(){
+       // Hides Comic Navigation Dropdown view when outside the dropdown
+       $("html").click(function(theEvent){
+            var e = $(theEvent.target);
+            // <![CDATA[
+            if(($(e).attr("class")!="comic-nav-bar") && ($(e).attr("class")!="comic-nav-bar-list chapter dropdown-chapter")){
+            // ]]>
+                $(".comic-dropdown").removeClass("comic-dropdown-show");
+            }
+        });
+
+        // Hides Comic Navigation Dropdown view when clicking on iFrame
+        window.addEventListener('blur', function(e){
+            if(document.activeElement == document.querySelector('iframe')){
+                $(".comic-dropdown").removeClass("comic-dropdown-show");
+            }
+        });
+    }
+
+    $(document).ready(function(){
+
+        comicPageNavigation(); // Navigate though comic pages by using left/right arrow keys or A/D
+
+        dropdownCurrentChapterPageSet(); // Expands current chapter in Comic Navigation Dropdown and highlights current page.
+
+        dropdownViewToggle(); // Toggles Comic Navigation Bar Dropdown view.
+
+        dropdownChapterViewToggle(); // Toggles Chapters Dropdown view.
+
+        dropdownChapterViewHide(); // Hide Comic Navigation Bar Driodown view.
+
+    });
+    
+    
+    function resizebuttons(){
+        var bafbuttons = document.getElementById('backandforth');
+        var comicimage = "height:"+ document.getElementById('comic-image-wrap').offsetHeight + "px;width:" + (document.getElementById('comic-image-wrap').offsetWidth / 1.5 ) + "px";
+              
+        bafbuttons.setAttribute("style",comicimage);       
+    }
+    
+     function alertsave(){
+         document.getElementById("savebutton").textContent = "Saved";
+     }
+     
+    
+    
+    
+</script>

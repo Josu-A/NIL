@@ -1,0 +1,59 @@
+<div class="content-container">
+<a href="/archive/">&lt;&lt; Home</a>
+
+    [c:hasblogs]
+        <h2 class="heading"></h2>
+        <div class="after-heading">
+            <div id="blogs">
+                [l:blogs_paginated]
+                    <div class="blog-title">[v:l.blogtitle]</div>
+                    <div class="blog-author">
+                       <!-- by [v:l.authorname]-->
+                        <div class="blog-time">[v:l.posttime]</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="blog-content">
+                        <!--[c:l.avatar]
+                            <div class="avatar">
+                                <img src="[v:l.avatar]" alt="[v:l.authorname]"><br>
+                            </div>
+                        [/]-->
+                        [v:l.blog]
+                        <div class="clear"></div>
+                    </div>
+                    [c:l.allowcomments]
+                        <div class="blog-meta">
+                            <a href="[v:l.bloglink]">[v:l.comments] Comments &gt;&gt;</a>
+                        </div>
+                    [/]
+                [/]
+            </div>
+            [c:lastpagenumber>1]
+                <div class="pages">
+                    Pages:
+                    [l:pages]
+                        [c:l.skipped_ahead]
+                            <span class="page-skip">...</span>
+                        [/]
+                        [c:l.is_current]
+                            <span class="current-page">
+                        [/]
+                        <a href="[v:l.pagelink]" class="page-link">[v:l.page]</a>
+                        [c:l.is_current]
+                            </span>
+                        [/]
+                    [/]
+                </div>
+            [/]
+            <div class="clear"></div>
+        </div>
+    [/]
+    [c:!hasblogs]
+        <h2 class="heading">Error:</h2>
+        <div class="after-heading">
+            <div id="error-message">
+                There are currently no blogs.
+            </div>
+        </div>
+    [/]
+</div>

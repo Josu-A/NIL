@@ -1,0 +1,234 @@
+<div class="content-container" id="archive-container">
+    <div class="main-content">
+
+    <div class="top-buttons">
+      <div class="top-button" id="top-amazon">
+         <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon"></a>
+        </div>
+        <div class="top-button" id="top-subscribe">
+            <a href="[v:addsubscriptionlink]" title="Subscribe to NIL"></a>
+        </div>
+        <div class="top-button" id="top-corkboard">
+            <a href="/corkboard" title="The Corkboard"></a>
+        </div>
+        <div class="top-button" id="top-blog">
+            <a href="/blog/" title="Comic's blog"></a>
+        </div>
+     </div>
+
+        <header>
+          <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/yPVRzgLhY2U?si=WdXZFhLvGjIenL8Q"
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+          gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+
+              <a href="https://youtu.be/yPVRzgLhY2U?si=LNFKQb15bqLAKk4Q" alt="Comic banner" class="banner">
+              <img src="https://nil-canticum-bellum.thecomicseries.com/files/newbanner1s.png" style= "width:100%; display:block">
+              </a>
+
+        </header>
+
+
+        <main class="main-arch">
+            [c:searchon]
+            [c:!issearch]
+            <section id="search">
+                <form method="post" action="/search/">
+                    <div id="search-bar">
+                        <input type="text" name="search" placeholder="Search for comics" required>
+                        <input type="submit" value="Search" class="submit" title="Search comics">
+                    </div>
+                </form>
+            </section>
+            [/]
+            [/]
+            <section id="archive-box">
+
+                <div class="grid-item button">
+                    <a href="/comics/first" title="Start reading from the first page">Start reading</a>
+                </div>
+                 <div class="grid-item button">
+                    <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a>
+                </div>
+                <div class="grid-item button">
+                    <a href="/comics/[v:latestcomicnumber]" id="last-update-button" title="Start reading from the last update">Last update</a>
+                </div>
+                [c:show_chapter_overview]
+                [l:chapters]
+                <div class="grid-item" id="grid-[v:l.chaptername]">
+                    [c:l.cover]
+                    <div class="chapter-cover">
+                        <a href="[v:l.firstcomicinchapter]">
+                            <img src="[v:l.cover]">
+                        </a>
+                    </div>
+                    [/]
+                        <a class="chapter-data" onclick="showInnerComics(event, '[v:l.chaptername]');">
+                        <p id="titler[v:l.chaptername]" class="titler">
+                            <span>[v:l.chaptername] ▼ </span>
+                        </p>
+                    </a>
+
+                        <a> </a>
+                    </a>
+                </div>
+                [/]
+                [/]
+            </section>
+            [c:show_chapter_overview]
+            <section id="archive-nl-container">
+                <div id="thumbnail-preview-box" style="[v:thumbnail_box_styles]"></div>
+                <div id="nl-archive">
+                    [c:!usechapters]
+                    <div class="nl-archivecomics">
+                    [/]
+                        [l:chapteredarchive]
+                        [c:l.newchapter]
+                        <div class="nl-chapter-wrapper" id="nl-list-[v:l.chaptername]">
+
+                            <div class="nl-chapter-title">
+                                [c:l.chapterdescription]
+                                <span class="nl-chapterdescription">[v:l.chapterdescription]</span>
+                                [/]
+                            </div>
+
+                            <div class="nl-archivecomics">
+                            [/]
+                                <li class="nl-archivecomic">
+
+                                    <a class="nl-archivecomictitle" href="[v:l.comicurl]" onpointerover="comicfury.thumbnailMouseOver(event, 'thumbnail-preview-box', [v:l.thumbnail_jsdata])" onpointerout="comicfury.thumbnailMouseOut(event)">
+                                        [v:l.comictitle]
+                                    </a>
+
+                                </li>
+                            [c:l.chapterend]
+                            </div>
+
+                        </div>
+                        [/]
+                        [/]
+                    [c:!usechapters]
+                    </div>
+                    [/]
+                </div>
+            </section>
+            [/]
+
+            [c:show_comic_list]
+            <div id="thumbnail-preview-box" style="[v:thumbnail_box_styles]"></div>
+            <div id="nl-archive">
+                [c:!usechapters]
+                <div class="nl-archivecomics">
+                [/]
+                    [l:comics_paginated]
+                    [c:l.newchapter]
+                    <div id="nl-list-[v:l.chaptername]">
+                        <div class="nl-chapter-title">
+                            <h3>[v:l.chaptername]</h3>
+                            [c:l.chapterdescription]
+                            <span class="nl-chapterdescription">[v:l.chapterdescription]</span>
+                            [/]
+                        </div>
+                        <div class="nl-archivecomics">
+                        [/]
+                            <div class="nl-archivecomic">
+                                <a class="nl-archivecomictitle" href="[v:l.comicurl]" onpointerover="comicfury.thumbnailMouseOver(event, 'thumbnail-preview-box', [v:l.thumbnail_jsdata])" onpointerout="comicfury.thumbnailMouseOut(event)">
+                                    [v:l.comictitle]
+                                </a>
+                            </div>
+                        [c:l.chapterend]
+                        </div>
+                    </div>
+                    [/]
+                    [/]
+                [c:!usechapters]
+                </div>
+                [/]
+            </div>
+            [/]
+
+            [c:lastpagenumber>1]
+            <div id="pages">
+                <div id="pageslabel">
+                    Pages:
+                </div>
+                [l:pages]
+                [c:l.skipped_ahead]
+                <span class="pageskip">...</span>
+                [/]
+                <a href="[v:l.pagelink]" class="pagelink [c:l.is_current]currentpage[/]">[v:l.page]</a>
+                [/]
+            </div>
+            [/]
+
+            [c:show_chapter_overview]
+            <div style="margin-block: 15px;">
+                <a href="/archive/comics">List all Comics</a>
+            </div>
+            [/]
+
+            [c:show_comic_list]
+            [c:ischapterarchive]
+            <div style="margin-block: 15px;">
+                <a href="/archive/">&lt;&lt; Go back to Main Archive</a>
+            </div>
+            [/]
+            [c:!ischapterarchive]
+            [c:usechapters]
+            <div style="margin-block: 15px;">
+                <a href="/archive/chapters">Chapter Overview</a>
+            </div>
+            [/]
+            [/]
+            [/]
+        </main>
+    </div>
+
+    <aside>
+        <div id="aside-amazon">
+         <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonbuyes.png" class=buttonimg></a>
+        </div>
+        <div id="aside-subscribe">
+            <a href="[v:addsubscriptionlink]" title="Subscribe to NIL"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonsubscribees.png" class=buttonimg></a>
+        </div>
+        <div id="aside-corkboard">
+            <a href="/corkboard" title="The Corkboard"> <img src="https://nil-canticum-bellum.thecomicseries.com/files/buttoncorkboardes.png" class=buttonimg></a>
+        </div>
+        <div id="aside-blog">
+            <a href="/blog/" title="Comic's blog"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonbloges.png" class=buttonimg></a>
+        </div>
+    </aside>
+</div>
+
+<script>
+    const showInnerComics = (event, chaptername) => {
+        const expandedChapterFolder = document.getElementsByClassName('grid-item-toggled')[0];
+        let expandedTitler;
+        if (expandedChapterFolder) {
+            expandedChapterFolder.classList.remove('grid-item-toggled');
+            expandedTitler = expandedChapterFolder.querySelector('.titler');
+            expandedTitler.textContent = `${expandedTitler.textContent.slice(0,-2)} ▼`;
+        }
+        if (!expandedChapterFolder || (event.srcElement !== expandedTitler && event.srcElement.firstElementChild !== expandedTitler)) {
+            const chapterFolder = document.getElementById(`grid-${chaptername}`);
+            chapterFolder.classList.add('grid-item-toggled');
+            const titler = chapterFolder.querySelector('.titler');
+            titler.textContent = `${chaptername} ▲`;
+            chapterFolder.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+
+    const moveComicListIntoChapter = chaptername => {
+        const chapterContent = document.getElementById(`nl-list-${chaptername}`);
+        const chapterFolder = document.getElementById(`grid-${chaptername}`);
+        chapterFolder.appendChild(chapterContent);
+    }
+
+    window.addEventListener('load', event => {
+        const chapterDatas = Array.from(document.getElementsByClassName('chapter-data'));
+        chapterDatas.forEach(chapterData => {
+            const chapterName = chapterData.querySelector('.titler').innerText.slice(0, -2);
+            moveComicListIntoChapter(chapterName);
+        });
+        document.getElementById('archive-nl-container').remove();
+    });
+</script>

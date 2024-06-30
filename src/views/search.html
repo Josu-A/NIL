@@ -1,0 +1,36 @@
+<div class="content-container">
+    <header>
+        <h1><a href="/" title="[v:webcomicname]">[v:webcomicname]</a></h1>
+    </header>
+    <main>
+        <section>
+            <h2 title="Search for a comic">Search for a comic</h2>
+            <form method="post" action="/search/" id="big-search-form">
+                <fieldset>
+                    <legend>Search bar</legend>
+                    <p>
+                        <input type="text" name="search" placeholder="[v:searchterm]" id="big-search-box" required>
+                        <input type="submit" value="Search!" class="submit">
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        [c:searched]
+        <section>
+            <h2 title="Search results">Search results</h2>
+            [c:!foundresults]
+                <p>
+                    <strong>Error:</strong> This search gave no results... try again
+                </p>
+            [/]
+            [c:foundresults]
+                <ul id="search-results">
+                    [l:searchresults]
+                        <li><a href="[v:l.comicurl]#comicimagewrap">[v:l.comictitle]</a> <span class="search-post-time">([v:l.posttime])</span></li>
+                    [/]
+                </ul>
+            [/]
+        </section>
+        [/]
+    </main>
+</div>
