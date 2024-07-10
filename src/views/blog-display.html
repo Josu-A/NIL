@@ -2,12 +2,12 @@
     <div class="blog-nav">
         <div class="prev-blog">
             [c:prevbloglink]
-                <a href="[v:prevbloglink]">Previous Blog</a>
+            <a href="[v:prevbloglink]">Previous Blog</a>
             [/]
         </div>
         <div class="next-blog">
             [c:nextbloglink]
-                <a href="[v:nextbloglink]">Next Blog</a>
+            <a href="[v:nextbloglink]">Next Blog</a>
             [/]
         </div>
     </div>
@@ -21,9 +21,9 @@
             </div>
             <div class="blog-content">
                 [c:avatar]
-                    <div class="avatar">
-                        <img src="[v:avatar]" alt="[v:authorname]"><br>
-                    </div>
+                <div class="avatar">
+                    <img src="[v:avatar]" alt="[v:authorname]"><br>
+                </div>
                 [/]
                 [v:blog]
                 <div class="clear"></div>
@@ -35,53 +35,53 @@
         <div class="clear"></div>
     </div>
     [c:showcomments]
-        [c:comments]
-            <h2 class="heading">Comments:</h2>
-            [c:allowcomments]
-                <div class="post-comment">
-                    <a href="[v:commentlink]" onclick='window.open("[v:commentlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="window">Post a Comment</a>
-                </div>
-                [c:!allowguestcomments]
-                    (You have to be registered at <a href="https://comicfury.com">ComicFury</a> to leave a comment!)
-                [/]
-            [/]
-            <div class="after-heading">
-                <div class="comments">
-                    [l:comments]
-                        <div class="comment [c:l.is_reply]reply[/]">
-                            <div class="comment-data">
-                                <span class="author-data">
-                                    <a href="[v:l.profilelink]"><b>[v:l.authorname]</b></a>
-                                </span>
-                                <span class="post-time">[v:l.posttime]</span>
-                                <span class="comment-control [v:l.controlclass]">
-                                    <span class="[v:l.editclass]"><a href="[v:l.editlink]" onclick='window.open("[v:l.editlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowedit">edit</a> </span>
-                                    <span class="[v:l.deleteclass]"><a href="[v:l.deletelink]" onclick='window.open("[v:l.deletelink]","delete","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowdelete">delete</a></span>
-                                    <a href="[v:l.replylink]" onclick='window.open("[v:l.replylink]","reply","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowreply">reply</a>
-                                </span>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="comment-content">
-                                [c:l.avatar]
-                                    <div class="avatar">
-                                        <img src="[v:l.avatar]" alt="[v:l.authorname]"><br>
-                                    </div>
-                                [/]
-                                <span class="comment-text">
-                                    [v:l.comment]
-                                </span>
-                            </div>
-                        </div>
-                    [/]
+    [c:comments]
+    <h2 class="heading">Comments:</h2>
+    [c:allowcomments]
+    <div class="post-comment">
+        <a href="[v:commentlink]" onclick='window.open("[v:commentlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="window">Post a Comment</a>
+    </div>
+    [c:!allowguestcomments]
+        (You have to be registered at <a href="https://comicfury.com">ComicFury</a> to leave a comment!)
+    [/]
+    [/]
+    <div class="after-heading">
+        <div class="comments">
+            [l:comments]
+            <div class="comment [c:l.is_reply]reply[/]">
+                <div class="comment-data">
+                    <span class="author-data">
+                        <a href="[v:l.profilelink]"><b>[v:l.authorname]</b></a>
+                    </span>
+                    <span class="post-time">[v:l.posttime]</span>
+                    <span class="comment-control [v:l.controlclass]">
+                        <span class="[v:l.editclass]"><a href="[v:l.editlink]" onclick='window.open("[v:l.editlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowedit">edit</a> </span>
+                        <span class="[v:l.deleteclass]"><a href="[v:l.deletelink]" onclick='window.open("[v:l.deletelink]","delete","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowdelete">delete</a></span>
+                        <a href="[v:l.replylink]" onclick='window.open("[v:l.replylink]","reply","menubar=no,width=570,height=360,toolbar=no"); return false;' target="windowreply">reply</a>
+                    </span>
                     <div class="clear"></div>
                 </div>
+                <div class="comment-content">
+                    [c:l.avatar]
+                    <div class="avatar">
+                        <img src="[v:l.avatar]" alt="[v:l.authorname]"><br>
+                    </div>
+                    [/]
+                    <span class="comment-text">
+                        [v:l.comment]
+                    </span>
+                </div>
             </div>
-        [/]
+            [/]
+            <div class="clear"></div>
+        </div>
+    </div>
+    [/]
     [/]
     [c:allowcomments]
-        <div class="post-comment"><a href="[v:commentlink]" onclick='window.open("[v:commentlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="window">Post a Comment</a></div>
-        [c:!allowguestcomments]
-            (You have to be registered at <a href="https://comicfury.com">ComicFury</a> to leave a comment!)
-        [/]
+    <div class="post-comment"><a href="[v:commentlink]" onclick='window.open("[v:commentlink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' target="window">Post a Comment</a></div>
+    [c:!allowguestcomments]
+        (You have to be registered at <a href="https://comicfury.com">ComicFury</a> to leave a comment!)
+    [/]
     [/]
 </div>

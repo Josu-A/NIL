@@ -14,18 +14,18 @@
         --navigation-margin: 8px;
         --vertical-margin-separator: 20px;
     }
-    
+
     a:link, a:visited {
         color: var(--main-color);
         text-decoration: none;
     }
-    
+
     a:hover {
         color: var(--link-color);
         font-weight: bold;
         text-decoration: none;
     }
-    
+
     body {
         background-attachment: fixed;
         background-image: url(https://nil-canticum-bellum.thecomicseries.com/files/background2.png);
@@ -37,7 +37,7 @@
         margin: 0;
         text-align: center;
     }
-    
+
     input, select {
         background-color: var(--button-bg);
         border: 2px solid var(--button-bg);
@@ -46,40 +46,40 @@
         margin-inline: var(--button-margin);
         padding-block: var(--button-padding);
     }
-    
+
     input:not([type="submit"]), select {
         padding-inline: calc(var(--button-padding) * 3) var(--button-padding);
     }
-    
+
     input[type="submit"] {
         padding-inline: calc(var(--button-padding) * 3);
         transition: filter 0.2s;
     }
-    
+
     input[type="submit"]:hover {
         filter: brightness(1.2);
     }
-    
+
     input[type="submit"]:active {
         filter: brightness(1.3);
     }
-    
+
     #container {
         min-width: 400px;
         margin-top: 1em;
         text-align: left;
     }
-    
+
     .content-container {
         margin-inline: 24%;
     }
-    
+
     .content-container#archive-container {
         display: flex;
         justify-content: center;
         margin-right: calc(24% - var(--main-padding) - var(--aside-width));
     }
-    
+
     @media (max-width: 1400px) {
         .content-container {
             margin-inline: 20%;
@@ -89,7 +89,7 @@
             margin-right: calc(20% - var(--main-padding) - var(--aside-width));
         }
     }
-    
+
     @media (max-width: 1200px) {
         .content-container {
             margin-inline: 15%;
@@ -98,10 +98,10 @@
             margin-right: 15%;
         }
         aside {
-           display: none !important; 
+           display: none !important;
         }
     }
-    
+
     @media (max-width: 870px) {
         .content-container {
             margin-inline: 12%;
@@ -110,7 +110,7 @@
             margin-right: 12%;
         }
     }
-    
+
     @media (max-width: 765px) {
         .content-container {
             margin-inline: 8%;
@@ -119,44 +119,44 @@
             margin-right: 8%;
         }
     }
-    
+
     #cf-ads {
         display: table;
         margin: auto;
         text-align: center;
     }
-    
+
     header > nav {
         float: right;
         text-align: right;
     }
-    
+
     header > nav a:link,
     header > nav a:visited {
         color: var(--link-color);
     }
-    
+
     header > nav a:hover {
         color: var(--navigation-color);
     }
-    
+
     header > nav > ul {
         display: inline-flex;
         list-style: none;
         margin: 0;
         padding: 0;
     }
-    
+
     header > nav > ul > li:not(:first-child) {
         margin-left: var(--navigation-margin);
     }
-    
+
     h1, h2, h3, h4, h5, h6 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         margin-block: var(--vertical-margin-separator) 0;
     }
-    
+
     h1 {
         font-size: 1.5em;
     }
@@ -175,40 +175,40 @@
     h6 {
         font-size: 1.05em;
     }
-    
+
     p.heading-sub {
         font-size: 0.9em;
         margin-block: 1em 0;
         margin-left: 0.4em;
     }
-    
+
     main {
         background-color: var(--main-bg);
         margin-bottom: 0;
         margin-inline: 0;
         padding: var(--main-padding);
     }
-    
+
     main:not(.main-arch) {
         margin-top: var(--vertical-margin-separator);
     }
-    
+
     .clear {
         clear: both;
     }
-    
+
     .left {
         text-align: left!important;
     }
-    
+
     .reply {
         margin-left: 40px;
     }
-    
+
     fieldset, footer {
         margin-top: var(--vertical-margin-separator);
     }
-    
+
     .titler {
         cursor: pointer;
     }
@@ -220,21 +220,21 @@
     #author-notes {
         margin-bottom: 30px;
     }
-    
+
     #comic-image-wrap {
         text-align: center;
         cursor: pointer;
     }
-    
+
     #comic-image-wrap a, #comic-image-wrap img {
         display: block;
     }
-    
+
     #comic-image-wrap img {
         height: auto;
         width: 100%;
     }
-    
+
     #comic-nav {
         display: flex;
         justify-content: center;
@@ -243,11 +243,11 @@
         margin-top: 15px;
         text-align: center;
     }
-    
+
     #comment-form {
         position: relative;
     }
-    
+
     #comment-iframe-box-image{
         height: auto;
         opacity: 0.6;
@@ -257,7 +257,7 @@
         top: 160px;
         width: 70px;
     }
-    
+
     #comment-iframe-send-image{
         height: auto;
         pointer-events: none;
@@ -266,65 +266,65 @@
         top: 320px;
         width: 40px;
     }
-    
+
     #comment-iframe-overlay {
         height: 100%;
         width: 100%;
     }
-    
+
     #cr-left {
         float: left;
     }
-    
+
     #cr-right {
         float: right;
     }
-    
+
     #save-place {
         text-align: center;
         margin-bottom: 0px;
     }
-    
+
     #vote-number {
         font-size: 13px;
     }
-    
+
     .author-data, .author-data a:link, .author-data a:visited {
         color: hsl(0, 0%, 67%);
         font-weight: bold;
         text-decoration: none;
     }
-    
+
     .author-data a:hover  {
         color: #DD0000;
         font-style: normal;
         font-weight: bold;
         text-decoration: none;
     }
-    
+
     .avatar {
         float: left;
         margin-bottom: 3px;
-        margin-right: 20px; 
+        margin-right: 20px;
     }
-    
+
     .comic-dropdown {
-        display: none; 
+        display: none;
     }
-    
+
     .comic-dropdown-show{
         background-color: var(--button-bg);
-        display: block !important; 
+        display: block !important;
         margin: 0;
-        max-height: 400px; 
+        max-height: 400px;
         overflow: hidden;
         overflow-y: scroll;
-        padding: 0; 
+        padding: 0;
         position: absolute;
         width: 445px;
         z-index: 99;
     }
-    
+
     .comic-nav-bar {
         background-color: var(--button-bg);
         color: var(--button-color);
@@ -336,15 +336,15 @@
         white-space: nowrap;
         width: 445px;
     }
-    
+
     .comic-nav-bar:hover {
-        cursor: pointer;  
+        cursor: pointer;
     }
-    
+
     .comic-nav-bar-list {
         display: none;
     }
-    
+
     .comic-nav-bar-list-show {
         background-color: var(--button-bg);
         display: list-item !important;
@@ -352,55 +352,55 @@
         width: 445px;
         z-index: 99!important;
     }
-    
+
     .comic-nav-link {
         margin-inline: 0px;
     }
-    
+
     .comment {
         clear: both;
         padding-top: 10px;
     }
-    
+
     .comment-bloc {
         background: hsl(0, 0%, 11%);
     }
-    
+
     .comment-content {
         margin-right: 20px;
         margin-top: 5px;
     }
-    
+
     .comment-control {
         float: right !important;
     }
-    
+
     .comment-control a, .comment-control a:link, .comment-control a:visited {
         color: hsl(0, 0%, 31%);
         margin-left: 12px;
         text-decoration: none;
     }
-    
+
     .comment-control a:hover {
         color: #DD0000;
         text-decoration: none;
     }
-    
+
     .comment-data {
         background-color: var(--button-bg);
         padding-block: 4px;
         padding-inline: 8px;
     }
-    
+
     .comment-iframe-overlay-bb-code-buttons{
         position: absolute;
         top: 71.2px;
     }
-    
+
     .comment-text {
         margin-left: 0px;
     }
-    
+
     .dropdown-chapter {
         display: list-item !important;
         font-weight: bold;
@@ -409,14 +409,14 @@
         text-align: left;
         width: 435px;
     }
-    
+
     .dropdown-page {
         left: -10px;
         position: relative;
         text-align: left;
         width: 445px;
     }
-    
+
     .dropdown-page a {
         background-clip: padding-box!important;
         display: block;
@@ -425,24 +425,24 @@
         padding-left: 20px;
         width: 93.2%;
     }
-    
+
     .dropdown-page a:hover{
         background-color: hsl(0, 0%, 11%);
     }
-    
+
     .space {
         display: inline-block;
-        height: 24.8px; 
+        height: 24.8px;
         vertical-align: bottom;
-        width: 20px; 
+        width: 20px;
     }
-    
+
     .perma-link-code {
         font-size: 12px;
         font-weight: normal;
         margin-inline: 10px;
     }
-    
+
     .post-comment {
         background: var(--button-bg);
         font-size: 20px;
@@ -451,44 +451,44 @@
         padding-left: 10px;
         padding-top: 5px;
     }
-    
+
     .post-time {
         color: var(--button-color);
         float: right;
         margin-left: 16px;
     }
-    
+
     #backandforth {
         display: flex;
         height: 100px;
         justify-content: space-between;
         position: absolute;
         width: 100px;
-        
+
     }
-    
+
     .prevoverlay {
         background: transparent;
         height: auto;
         width: 50%;
     }
-    
+
     .prevoverlay a {
         height: 100%;
         width: 100%;
     }
-    
+
     .nextoverlay {
         background: transparent;
         height: auto;
         width: 50%;
     }
-    
+
     .nextoverlay a {
         height: 100%;
         width: 100%;
     }
-    
+
     .nl-archivecomic {
         background: hsla(0, 0%, 27%, 0.67);
         color: hsl(0, 0%, 80%) !important;
@@ -502,16 +502,16 @@
         text-align: center;
         width: 100%;
     }
-    
+
     .nl-archivecomic a:hover {
         background: hsla(0, 0%, 52%, 0.67);
     }
-    
+
     .nl-archivecomictitle {
         display: inline-block;
         width: 100%;
     }
-    
+
 </style>
 
 <!-------------------------------- Search -------------------------------->
@@ -520,20 +520,20 @@
     form#big-search-form > fieldset > p {
         display: flex;
     }
-    
+
     input#big-search-box {
         width: 100%;
     }
-    
+
     ul#search-results {
         margin-top: 1.5em;
         list-style: decimal;
     }
-    
+
     ul#search-results > li:not(:first-child) {
         padding-top: 0.3em;
     }
-    
+
     .search-post-time {
         color: var(--button-color);
         margin-left: 2px;
@@ -546,11 +546,11 @@
     #latest-comic {
         text-align: center;
     }
-    
+
     #latest-comic-link {
         border: 0px;
     }
-    
+
     #latest-comic-link img {
         border: 1px solid black;
     }
@@ -564,28 +564,28 @@
         --grid-item-padding: 0.6em;
         --grid-gap: 10px;
     }
-    
+
     aside {
         padding-left: var(--main-padding);
     }
-    
+
     aside * {
         color: inherit !important;
         display: block;
     }
-    
+
     aside > * {
         width: var(--aside-width);
     }
-    
+
     aside > *:not(:first-child) {
         margin-top: var(--grid-gap);
     }
-    
+
     a.chapter-data {
         font-size: larger;
     }
-    
+
     .banner {
         display: block;
         width: 100%;
@@ -594,21 +594,21 @@
     .banner:hover {
         content: url("https://nil-canticum-bellum.thecomicseries.com/files/newbanner3.png");
     }
-    
+
     .buttonimg {
         width: 100%;
     }
-    
+
     .buttonimg:hover {
         width: 110%;
     }
-    
+
     .top-button {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
-    
+
     #top-blog {
         background-color: var(--main-bg);
         background-image: url(https://testytestytesty.thecomicseries.com/files/buttons/buttonbloge.png);
@@ -625,70 +625,70 @@
         background-color: #232f3f;
         background-image: url(https://testytestytesty.thecomicseries.com/files/buttons/buttonbuye.png);
     }
-    
+
     header > img {
         display: block;
         max-width: 100%;
     }
-    
+
     #search-bar {
         margin-bottom: 16px;
         text-align: right;
     }
-    
+
     section#archive-box {
         display: grid;
         grid-gap: var(--grid-gap);
     }
-    
+
     .grid-item {
         background: var(--button-bg);
         padding: var(--grid-item-padding);
     }
-    
+
     .grid-item:hover:not(.grid-item-toggled) {
         background: hsl(0, 0%, 30%);
     }
-    
+
     .grid-item.button {
         border-bottom: calc(var(--grid-item-padding) / 2) solid var(--button-color);
         padding-bottom: calc(var(--grid-item-padding) / 2);
         text-align: center;
     }
-    
+
     .grid-item.button > a {
         color: hsl(0, 0%, 80%);
         display: block;
         font-size: 1.3em;
     }
-    
+
     .grid-item.button:hover {
         background-color: hsl(0, 0%, 40%);
         font-weight: bold;
     }
-    
+
     .grid-item > .chapter-cover > a {
         display: block;
         line-height: 0;
         text-align: center;
     }
-    
+
     .grid-item > .chapter-cover > a > img {
         height: auto;
         max-width: 100%;
     }
-    
+
     .grid-item-toggled > .chapter-data + .nl-chapter-wrapper {
         display: block;
     }
-    
+
     .grid-item > .chapter-data {
         align-items: center;
         cursor: pointer;
         display: flex;
         flex-grow: 1;
     }
-    
+
     .grid-item > .chapter-data > p {
         background: none;
         border: none;
@@ -704,26 +704,26 @@
         text-align: inherit;
         text-decoration: none;
     }
-    
+
     .grid-item > .chapter-data > p > span {
         display: block;
     }
-    
+
     .grid-item:not(.button) {
         display: flex;
         flex-direction: column;
     }
-    
+
     .nl-chapter-wrapper {
         display: none;
     }
-    
+
     .nl-chapterdescription {
         display: block;
         margin-bottom: 1em;
         width: 90%;
     }
-    
+
     @media (max-width:1200px) {
         .top-buttons {
             margin-block: 3%;
@@ -741,7 +741,7 @@
             padding: 1em;
         }
     }
-    
+
     @media (min-width:1199.99px){
         .top-buttons{
             display: none;
@@ -763,7 +763,7 @@
             grid-column: span var(--current-grid-columns)!important;
         }
     }
-    
+
     @media (max-width: 999px) {
         section {
             --current-grid-columns: 6;
@@ -782,7 +782,7 @@
             grid-column: span var(--current-grid-columns)!important;
         }
     }
-    
+
     @media (max-width: 700px) {
         section {
             --current-grid-columns: 2;
@@ -816,72 +816,72 @@
         margin-top: 5px;
         text-align: right;
     }
-    
+
     .blog-author {
         border-bottom: 1px solid hsl(0, 0%, 67%);
         color: hsl(0, 0%, 74%);
         margin-block: 0px;
         margin-inline: 10px;
     }
-    
+
     .blog-content {
         font-size: 14px;
         margin-bottom: 16px;
         margin-inline: 16px;
         margin-top: 2px;
     }
-    
+
     .blog-content img {
         max-width: 100%;
     }
-    
+
     .blog-meta {
         text-align: right;
     }
-    
+
     .blog-nav {
         display: table;
         margin-block: 5px;
         width: 100%;
     }
-    
+
     .blog-time {
         float: right;
     }
-    
+
     .blog-title {
         color: hsl(0, 0%, 80%);
         font-size: 20px;
         font-weight: bold;
     }
-    
+
     .blog-title:not(:first-child) {
         margin-top: 20px;
     }
-    
+
     .current-page {
         font-size: 1.3em;
     }
-    
+
     .next-blog {
         display: table-cell;
         text-align: right;
         width: 50%;
     }
-    
+
     .page-link {
         margin-left: 20px;
     }
-    
+
     .pages {
         margin-top: 20px;
         text-align: right;
     }
-    
+
     .page-skip {
         margin-left: 20px;
     }
-    
+
     .prev-blog {
         display: table-cell;
         text-align: left;
@@ -896,8 +896,8 @@
         color: rgb(100, 0, 0);
         font-family: "calibri";
         font-size: 36px;
-        font-style: oblique; 
-        font-weight: 1000; 
+        font-style: oblique;
+        font-weight: 1000;
         margin-top: 40px;
     }
 </style>
@@ -908,19 +908,19 @@
     ::-webkit-scrollbar {
         width: 15px;
     }
-    
+
     ::-webkit-scrollbar-thumb {
-        background: hsl(0, 0%, 24%); 
+        background: hsl(0, 0%, 24%);
     }
-    
+
     ::-webkit-scrollbar-thumb:hover {
-        background: hsl(0, 0%, 33%); 
+        background: hsl(0, 0%, 33%);
     }
-    
+
     ::-webkit-scrollbar-track {
-        background: hsl(0, 0%, 20%); 
+        background: hsl(0, 0%, 20%);
     }
-    
+
     ::-webkit-scrollbar-track-piece {
         background: hsl(0, 0%, 11%);
     }
