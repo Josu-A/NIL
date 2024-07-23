@@ -1,38 +1,38 @@
 <div class="content-container" id="archive-container">
     <div class="main-content">
-
-    <div class="top-buttons">
-      <div class="top-button" id="top-amazon">
-         <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon"></a>
+        <div class="top-buttons">
+            <div class="top-button" id="top-amazon">
+                <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon">
+                    <img src="/files/resources/images/buttons/button-buy.png" loading="lazy" alt="Go to Amazon">
+                </a>
+            </div>
+            <div class="top-button" id="top-subscribe">
+                <a href="[v:addsubscriptionlink]" title="Subscribe to NIL">
+                    <img src="/files/resources/images/buttons/button-subscribe.png" loading="lazy" alt="Subscribe to NIL">
+                </a>
+            </div>
+            <div class="top-button" id="top-corkboard">
+                <a href="/corkboard" title="The Corkboard">
+                    <img src="/files/resources/images/buttons/button-corkboard.png" loading="lazy" alt="The Corkboard">
+                </a>
+            </div>
+            <div class="top-button" id="top-blog">
+                <a href="/blog" title="Comic's blog">
+                    <img src="/files/resources/images/buttons/button-blog.png" loading="lazy" alt="Comic's blog">
+                </a>
+            </div>
         </div>
-        <div class="top-button" id="top-subscribe">
-            <a href="[v:addsubscriptionlink]" title="Subscribe to NIL"></a>
-        </div>
-        <div class="top-button" id="top-corkboard">
-            <a href="/corkboard" title="The Corkboard"></a>
-        </div>
-        <div class="top-button" id="top-blog">
-            <a href="/blog/" title="Comic's blog"></a>
-        </div>
-     </div>
-
         <header>
-          <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/yPVRzgLhY2U?si=WdXZFhLvGjIenL8Q"
-          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-          gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
-
-              <a href="https://youtu.be/yPVRzgLhY2U?si=LNFKQb15bqLAKk4Q" alt="Comic banner" class="banner">
-              <img src="https://nil-canticum-bellum.thecomicseries.com/files/newbanner1s.png" style= "width:100%; display:block">
-              </a>
-
+            <a href="https://youtu.be/yPVRzgLhY2U?si=LNFKQb15bqLAKk4Q" class="banner" target="_blank" rel="noreferrer noopener">
+                <img src="/files/resources/images/newbanner1.png" alt="Comic banner" loading="lazy">
+                <img src="/files/resources/images/newbanner3.png" alt="Comic banner" fetchpriority="low">
+            </a>
         </header>
-
-
         <main class="main-arch">
             [c:searchon]
             [c:!issearch]
             <section id="search">
-                <form method="post" action="/search/">
+                <form method="post" action="/search">
                     <div id="search-bar">
                         <input type="text" name="search" placeholder="Search for comics" required>
                         <input type="submit" value="Search" class="submit" title="Search comics">
@@ -42,41 +42,36 @@
             [/]
             [/]
             <section id="archive-box">
-
                 <div class="grid-item button">
                     <a href="/comics/first" title="Start reading from the first page">Start reading</a>
                 </div>
-                 <div class="grid-item button">
-                    <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a>
+                <div class="grid-item button">
+                    <a href="#" onclick="loadPlace()" title="Load from My Place">Load My Place</a>
                 </div>
                 <div class="grid-item button">
-                    <a href="/comics/[v:latestcomicnumber]" id="last-update-button" title="Start reading from the last update">Last update</a>
+                    <a href="/comics/[v:latestcomicnumber]" title="Start reading from the last update">Last update</a>
                 </div>
                 [c:show_chapter_overview]
+                <!-- /archive -->
                 [l:chapters]
                 <div class="grid-item" id="grid-[v:l.chaptername]">
                     [c:l.cover]
                     <div class="chapter-cover">
                         <a href="[v:l.firstcomicinchapter]">
-                            <img src="[v:l.cover]">
+                            <img src="[v:l.cover]" loading="lazy" alt="[v:l.chaptername]'s cover">
                         </a>
                     </div>
                     [/]
-                        <a class="chapter-data" onclick="showInnerComics(event, '[v:l.chaptername]');">
-                        <p id="titler[v:l.chaptername]" class="titler">
-                            <span>[v:l.chaptername] ▼ </span>
-                        </p>
-                    </a>
-
-                        <a> </a>
+                    <a class="chapter-data" onclick="showInnerComics(event, '[v:l.chaptername]');">
+                        [v:l.chaptername] ▼
                     </a>
                 </div>
                 [/]
                 [/]
             </section>
             [c:show_chapter_overview]
+            <!-- /archive -->
             <section id="archive-nl-container">
-                <div id="thumbnail-preview-box" style="[v:thumbnail_box_styles]"></div>
                 <div id="nl-archive">
                     [c:!usechapters]
                     <div class="nl-archivecomics">
@@ -84,25 +79,20 @@
                         [l:chapteredarchive]
                         [c:l.newchapter]
                         <div class="nl-chapter-wrapper" id="nl-list-[v:l.chaptername]">
-
                             <div class="nl-chapter-title">
                                 [c:l.chapterdescription]
                                 <span class="nl-chapterdescription">[v:l.chapterdescription]</span>
                                 [/]
                             </div>
-
                             <div class="nl-archivecomics">
                             [/]
                                 <li class="nl-archivecomic">
-
-                                    <a class="nl-archivecomictitle" href="[v:l.comicurl]" onpointerover="comicfury.thumbnailMouseOver(event, 'thumbnail-preview-box', [v:l.thumbnail_jsdata])" onpointerout="comicfury.thumbnailMouseOut(event)">
+                                    <a class="nl-archivecomictitle" href="[v:l.comicurl]">
                                         [v:l.comictitle]
                                     </a>
-
                                 </li>
                             [c:l.chapterend]
                             </div>
-
                         </div>
                         [/]
                         [/]
@@ -112,8 +102,8 @@
                 </div>
             </section>
             [/]
-
             [c:show_comic_list]
+            <!-- /archive/comics -->
             <div id="thumbnail-preview-box" style="[v:thumbnail_box_styles]"></div>
             <div id="nl-archive">
                 [c:!usechapters]
@@ -129,13 +119,13 @@
                             [/]
                         </div>
                         <div class="nl-archivecomics">
-                        [/]
+                    [/]
                             <div class="nl-archivecomic">
                                 <a class="nl-archivecomictitle" href="[v:l.comicurl]" onpointerover="comicfury.thumbnailMouseOver(event, 'thumbnail-preview-box', [v:l.thumbnail_jsdata])" onpointerout="comicfury.thumbnailMouseOut(event)">
                                     [v:l.comictitle]
                                 </a>
                             </div>
-                        [c:l.chapterend]
+                    [c:l.chapterend]
                         </div>
                     </div>
                     [/]
@@ -145,7 +135,6 @@
                 [/]
             </div>
             [/]
-
             [c:lastpagenumber>1]
             <div id="pages">
                 <div id="pageslabel">
@@ -159,17 +148,17 @@
                 [/]
             </div>
             [/]
-
             [c:show_chapter_overview]
+            <!-- /archive -->
             <div style="margin-block: 15px;">
                 <a href="/archive/comics">List all Comics</a>
             </div>
             [/]
-
             [c:show_comic_list]
+            <!-- /archive/comics -->
             [c:ischapterarchive]
             <div style="margin-block: 15px;">
-                <a href="/archive/">&lt;&lt; Go back to Main Archive</a>
+                <a href="/archive">&lt;&lt; Go back to Main Archive</a>
             </div>
             [/]
             [c:!ischapterarchive]
@@ -182,19 +171,26 @@
             [/]
         </main>
     </div>
-
     <aside>
         <div id="aside-amazon">
-         <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonbuyes.png" class=buttonimg></a>
+            <a href="https://www.amazon.com/dp/B0CKCRZ7DX" title="Go to Amazon">
+                <img src="/files/resources/images/buttons/button-buy.png" class="buttonimg" loading="lazy" alt="Go to Amazon">
+            </a>
         </div>
         <div id="aside-subscribe">
-            <a href="[v:addsubscriptionlink]" title="Subscribe to NIL"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonsubscribees.png" class=buttonimg></a>
+            <a href="[v:addsubscriptionlink]" title="Subscribe to NIL">
+                <img src="/files/resources/images/buttons/button-subscribe.png" class="buttonimg" loading="lazy" alt="Subscribe to NIL">
+            </a>
         </div>
         <div id="aside-corkboard">
-            <a href="/corkboard" title="The Corkboard"> <img src="https://nil-canticum-bellum.thecomicseries.com/files/buttoncorkboardes.png" class=buttonimg></a>
+            <a href="/corkboard" title="The Corkboard">
+                <img src="/files/resources/images/buttons/button-corkboard.png" class="buttonimg" loading="lazy" alt="The Corkboard">
+            </a>
         </div>
         <div id="aside-blog">
-            <a href="/blog/" title="Comic's blog"><img src="https://nil-canticum-bellum.thecomicseries.com/files/buttonbloges.png" class=buttonimg></a>
+            <a href="/blog" title="Comic's blog">
+                <img src="/files/resources/images/buttons/button-blog.png" class="buttonimg" loading="lazy" alt="Comic's blog">
+            </a>
         </div>
     </aside>
 </div>
@@ -202,17 +198,17 @@
 <script>
     const showInnerComics = (event, chaptername) => {
         const expandedChapterFolder = document.getElementsByClassName('grid-item-toggled')[0];
-        let expandedTitler;
+        let expandedChapterData;
         if (expandedChapterFolder) {
             expandedChapterFolder.classList.remove('grid-item-toggled');
-            expandedTitler = expandedChapterFolder.querySelector('.titler');
-            expandedTitler.textContent = `${expandedTitler.textContent.slice(0,-2)} ▼`;
+            expandedChapterData = expandedChapterFolder.querySelector('.chapter-data');
+            expandedChapterData.textContent = `${expandedChapterData.textContent.slice(0,-2)} ▼`;
         }
-        if (!expandedChapterFolder || (event.srcElement !== expandedTitler && event.srcElement.firstElementChild !== expandedTitler)) {
+        if (!expandedChapterFolder || (event.srcElement !== expandedChapterData && event.srcElement.firstElementChild !== expandedChapterData)) {
             const chapterFolder = document.getElementById(`grid-${chaptername}`);
             chapterFolder.classList.add('grid-item-toggled');
-            const titler = chapterFolder.querySelector('.titler');
-            titler.textContent = `${chaptername} ▲`;
+            const chapterData = chapterFolder.querySelector('.chapter-data');
+            chapterData.textContent = `${chaptername} ▲`;
             chapterFolder.scrollIntoView({behavior: 'smooth'});
         }
     }
@@ -226,9 +222,9 @@
     window.addEventListener('load', event => {
         const chapterDatas = Array.from(document.getElementsByClassName('chapter-data'));
         chapterDatas.forEach(chapterData => {
-            const chapterName = chapterData.querySelector('.titler').innerText.slice(0, -2);
+            const chapterName = chapterData.innerText.slice(0, -2);
             moveComicListIntoChapter(chapterName);
         });
-        document.getElementById('archive-nl-container').remove();
+        document.getElementById('archive-nl-container')?.remove();
     });
 </script>

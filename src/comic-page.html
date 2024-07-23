@@ -25,67 +25,53 @@
     </header>
     <main>
         <section id="comic-page">
-        
             <div id="comic-image-wrap">
-            
                 <div id="backandforth" onload="resizebuttons">
-                
-                  <div class="prevoverlay">
-                    <a href="[v:prevcomic]/"></a>
-                  </div>
-                  
-                  [c:!islastcomic]
-                  <div class="nextoverlay">
-                    <a href="[v:nextcomic]/"></a> 
-                  </div>
-                  [/]
-                  
-                  
+                    <div class="prevoverlay">
+                        <a href="[v:prevcomic]/"></a>
+                    </div>
+                    [c:!islastcomic]
+                    <div class="nextoverlay">
+                        <a href="[v:nextcomic]/"></a>
+                    </div>
+                    [/]
                 </div>
-                
-                       [v:comicimage]
-                
+                [v:comicimage]
             </div>
-            
             <nav id="comic-nav">
-            
                 [c:!isfirstcomic]
-                    <a href="/comics/first/" rel="start" class="comic-nav-link" title="Go to first comic">&lt;&lt;First</a>
-                    <div class="space"></div>
-                    <a href="[v:prevcomic]/" rel="prev" class="comic-nav-link" title="Go to previous comic">&lt;Previous</a>
-                    <div class="space"></div>
+                <a href="/comics/first/" rel="start" class="comic-nav-link" title="Go to first comic">&lt;&lt;First</a>
+                <div class="space"></div>
+                <a href="[v:prevcomic]/" rel="prev" class="comic-nav-link" title="Go to previous comic">&lt;Previous</a>
+                <div class="space"></div>
                 [/]
-                
                 <div class="comic-nav-bar">
                     [v:pagetitle]
                     <ul class="comic-dropdown">
-                        [l:chapteredarchive]
-                            [c:l.newchapter]
-                                [c:!l.is_first]
-                                </ul>
-                            </li>
-                                [/]
-                            <li class="comic-nav-bar-list chapter dropdown-chapter">[v:l.chaptername] 
-                                <ul style="padding: 0">
-                            [/]
-                                    <li class="comic-nav-bar-list dropdown-page">
-                                        <a href="[v:l.comicurl]" title="[v:l.comictitle]">[v:l.comictitle]</a>
-                                    </li>
-                        [/]
-                                </ul>
-                            </li>
+                    [l:chapteredarchive]
+                    [c:l.newchapter]
+                    [c:!l.is_first]
+                    </ul>
+                        </li>
+                    [/]
+                        <li class="comic-nav-bar-list chapter dropdown-chapter">[v:l.chaptername]
+                            <ul style="padding: 0">
+                    [/]
+                                <li class="comic-nav-bar-list dropdown-page">
+                                    <a href="[v:l.comicurl]" title="[v:l.comictitle]">[v:l.comictitle]</a>
+                                </li>
+                    [/]
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-                
                 [c:!islastcomic]
-                    <div class="space"></div>
-                    <a href="[v:nextcomic]/" rel="next" class="comic-nav-link" title="Go to next comic">Next&gt;</a>
-                    <div class="space"></div>
-                    <a href="/comics/" rel="index" class="comic-nav-link" title="Go to latest comic">Latest&gt;&gt;</a>
+                <div class="space"></div>
+                <a href="[v:nextcomic]/" rel="next" class="comic-nav-link" title="Go to next comic">Next&gt;</a>
+                <div class="space"></div>
+                <a href="/comics/" rel="index" class="comic-nav-link" title="Go to latest comic">Latest&gt;&gt;</a>
                 [/]
-                
             </nav>
-            
         </section>
         <section class="comment-data">
             <div id="cr-left">
@@ -95,8 +81,8 @@
                 <a href="[v:ratelink]" onclick='window.open("[v:ratelink]","edit","menubar=no,width=570,height=360,toolbar=no"); return false;' id="ratelink" title="Rate this comic">Rate this comic</a>
             </div>
             <div id="save-place">
-                <a href="#" onclick="savePlace(this,[v:comicid]);alertsave();return false; " title="Save to my place" id="savebutton">Save My Place</a> 
-                | 
+                <a href="#" onclick="savePlace(this,[v:comicid]);alertsave();return false; " title="Save to my place" id="savebutton">Save My Place</a>
+                |
                 <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a>
             </div>
             <div class="clear"></div>
@@ -123,7 +109,7 @@
                             [/]
                             [c:!l.avatar]
                             <div class="avatar">
-                                <img src="https://nil-canticum-bellum.thecomicseries.com/files/avatargrey.png" alt="[v:l.authorname]" width="100px">
+                                <img src="/files/resources/images/avatargrey.png" alt="[v:l.authorname]" width="100px">
                             </div>
                             [/]
                             <div class="comment-bloc">
@@ -196,7 +182,7 @@
                                 [/]
                                 [c:!l.avatar]
                                 <div class="avatar">
-                                    <img src="https://nil-canticum-bellum.thecomicseries.com/files/avatargrey.png" alt="[v:l.authorname]" width="100px">
+                                    <img src="/files/resources/images/avatargrey.png" alt="[v:l.authorname]" width="100px">
                                 </div>
                                 [/]
                                 <span class="comment-text">[v:l.comment]</span>
@@ -316,7 +302,7 @@
                 if (event.target == this) {
                     // <![CDATA[
                     for (var j = 0; j < buttonChp.length; j++){
-                    // ]]> 
+                    // ]]>
                         if(index != j){
                             $(buttonChp[j]).children().children().removeClass("comic-nav-bar-list-show");
                         }
@@ -360,20 +346,20 @@
         dropdownChapterViewHide(); // Hide Comic Navigation Bar Driodown view.
 
     });
-    
-    
+
+
     function resizebuttons(){
         var bafbuttons = document.getElementById('backandforth');
         var comicimage = "height:"+ document.getElementById('comic-image-wrap').offsetHeight + "px;width:" + (document.getElementById('comic-image-wrap').offsetWidth / 1.5 ) + "px";
-              
-        bafbuttons.setAttribute("style",comicimage);       
+
+        bafbuttons.setAttribute("style",comicimage);
     }
-    
+
      function alertsave(){
          document.getElementById("savebutton").textContent = "Saved";
      }
-     
-    
-    
-    
+
+
+
+
 </script>
