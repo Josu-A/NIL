@@ -53,6 +53,9 @@
                 </div>
                 [c:show_chapter_overview]
                 <!-- /archive -->
+                <div class="grid-item button span-full">
+                    <a href="/archive/comics" title="List all comics in a single list">List all Comics</a>
+                </div>
                 [l:chapters]
                 <div class="grid-item" id="grid-[v:l.chaptername]">
                     [c:l.cover]
@@ -68,10 +71,25 @@
                 </div>
                 [/]
                 [/]
+                [c:show_comic_list]
+                <!-- /archive/comics -->
+                [c:ischapterarchive]
+                <div class="grid-item button span-full">
+                    <a href="/archive" title="Go back to Main Archive">&lt;&lt; Go back to Main Archive</a>
+                </div>
+                [/]
+                [c:!ischapterarchive]
+                [c:usechapters]
+                <div class="grid-item button span-full">
+                    <a href="/archive/chapters" title="List all comics chaptered">Chapter Overview</a>
+                </div>
+                [/]
+                [/]
+                [/]
             </section>
             [c:show_chapter_overview]
-            <!-- /archive -->
             <section id="archive-nl-container">
+            <!-- /archive -->
                 <div id="nl-archive">
                     [c:!usechapters]
                     <div class="nl-archivecomics">
@@ -147,27 +165,6 @@
                 <a href="[v:l.pagelink]" class="pagelink [c:l.is_current]currentpage[/]">[v:l.page]</a>
                 [/]
             </div>
-            [/]
-            [c:show_chapter_overview]
-            <!-- /archive -->
-            <div style="margin-block: 15px;">
-                <a href="/archive/comics">List all Comics</a>
-            </div>
-            [/]
-            [c:show_comic_list]
-            <!-- /archive/comics -->
-            [c:ischapterarchive]
-            <div style="margin-block: 15px;">
-                <a href="/archive">&lt;&lt; Go back to Main Archive</a>
-            </div>
-            [/]
-            [c:!ischapterarchive]
-            [c:usechapters]
-            <div style="margin-block: 15px;">
-                <a href="/archive/chapters">Chapter Overview</a>
-            </div>
-            [/]
-            [/]
             [/]
         </main>
     </div>

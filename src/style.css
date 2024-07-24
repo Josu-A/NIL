@@ -1,32 +1,38 @@
-/* -- General -------------------------------- */
-
 :root {
-    --button-bg: hsl(0, 0%, 20%);
-    --button-color: hsl(0, 0%, 47%);
-    --button-margin: 3px;
-    --button-padding: 3px;
-    --link-color: hsl(0, 0%, 63%);
-    --main-bg: hsl(0, 0%, 10%);
-    --main-color: hsl(0, 0%, 60%);
-    --main-padding: 1em;
-    --navigation-color: hsl(0, 0%, 91%);
-    --navigation-margin: 8px;
-    --vertical-margin-separator: 20px;
+    --bg-button: hsl(0, 0%, 20%);
+    --bg-button-hover: hsl(0, 0%, 30%);
+    --bg-comic-button: hsla(0, 0%, 24%);
+    --bg-comic-button-hover: hsl(0, 0%, 42%);
+    --bg-footer: hsla(0, 0%, 10%, 0.75);
+    --bg-main: hsl(0, 0%, 10%);
+    --color-archive-button: hsl(0, 0%, 80%);
+    --color-author-name: hsl(0, 0%, 67%);
+    --color-border: hsl(0, 0%, 70%);
+    --color-button: hsl(0, 0%, 47%);
+    --color-comment-text-highlight: #DD0000;
+    --color-error: #9F0000;
+    --color-link: hsl(0, 0%, 63%);
+    --color-main: hsl(0, 0%, 60%);
+    --color-navigation: hsl(0, 0%, 91%);
+    --margin-button: .25em;
+    --margin-navigation: .5em;
+    --margin-vertical-separator: 1.5rem;
+    --padding-button: .25em;
+    --padding-main: 1rem;
+    --radius-border: .35em;
+    --transition-animation: linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    --transition-time: .6s;
 }
 
 * {
     box-sizing: border-box;
 }
 
-a:link, a:visited {
-    color: var(--main-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--link-color);
-    font-weight: bold;
-    text-decoration: none;
+html {
+    --line-height: 1.5;
+    font-size: 100%;
+    height: 100%;
+    line-height: var(--line-height);
 }
 
 body {
@@ -34,29 +40,127 @@ body {
     background-image: url(/files/resources/images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    color: var(--main-color);
+    color: var(--color-main);
     font-family: "lucida sans unicode", "lucida grande", verdana, sans-serif;
-    font-size: 16px;
     margin: 0;
-    text-align: center;
+    min-height: 100%;
 }
+
+/* -- Start Font ----------------------------- */
+
+input,
+button,
+select,
+textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
+a,
+a:visited,
+a:link,
+input,
+select,
+button {
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link);
+    font-weight: bold;
+}
+
+/* -- End Font ------------------------------- */
+
+
+/* -- Start Headers -------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-block: var(--margin-vertical-separator) 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    letter-spacing: .1em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: .05em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.15em;
+}
+
+h5 {
+    font-size: 1.1em;
+}
+
+h6 {
+    font-size: 1.05em;
+}
+
+.heading-sub {
+    font-size: 0.9em;
+    margin-block: 1em 0;
+    margin-left: 0.4em;
+}
+
+/* -- End Headers ---------------------------- */
+
+
+/* -- Start Paragraphs ----------------------- */
+
+p {
+    margin-block: 1em;
+}
+
+/* -- End Paragraphs ------------------------- */
+
+
+/* -- Start Inputs --------------------------- */
 
 input, select {
-    background-color: var(--button-bg);
-    border: 2px solid var(--button-bg);
-    color: var(--button-color);
-    font-size: 14px;
-    margin-inline: var(--button-margin);
-    padding-block: var(--button-padding);
+    background-color: var(--bg-button);
+    border: 2px solid var(--bg-button);
+    color: var(--color-button);
+    font-size: 0.875em;
+    margin-inline: var(--margin-button);
+    padding-block: var(--padding-button);
 }
 
-input:not([type="submit"]), select {
-    padding-inline: calc(var(--button-padding) * 3) var(--button-padding);
+input:not([type="submit"]),
+select {
+    padding-inline: calc(var(--padding-button) * 3) var(--padding-button);
 }
 
 input[type="submit"] {
-    padding-inline: calc(var(--button-padding) * 3);
-    transition: filter 0.2s;
+    padding-inline: calc(var(--padding-button) * 3);
+    transition: filter var(--transition-time) var(--transition-animation);
 }
 
 input[type="submit"]:hover {
@@ -67,23 +171,79 @@ input[type="submit"]:active {
     filter: brightness(1.3);
 }
 
+form#big-search-form > fieldset > p {
+    display: flex;
+}
+
+fieldset {
+    margin-top: var(--margin-vertical-separator);
+}
+
+input#big-search-box {
+    flex: 1;
+}
+
+/* -- End Inputs ----------------------------- */
+
+
+/* -- Start Lists ---------------------------- */
+
+ol,
+ul {
+    padding-left: 1.5em;
+}
+
+ol ol {
+    padding-left: 1.5em;
+}
+
+ol ol ol {
+    padding-left: 2.5em;
+}
+
+ol ol ol ol {
+    padding-left: 1.5em;
+}
+
+ol ol ol ol ol {
+    padding-left: 2.5em;
+}
+
+li, dt {
+    margin-top: .75em;
+}
+
+dd {
+    margin-left: 1.5em;
+    margin-top: .25em;
+}
+
+/* -- End Lists ------------------------------ */
+
+
+/* -- Start Main Container ------------------- */
+
 #container {
     margin-top: 1em;
-    text-align: left;
+    padding: 0;
+    width: 100%;
 }
 
 .content-container {
-    --content-margin: 8%;
+    --content-margin: 2.5%;
     margin-inline: var(--content-margin);
 }
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .content-container {
+        --content-margin: 5%;
+    }
 }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     .content-container {
-        --content-margin: 12%;
+        --content-margin: 10%;
     }
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -92,11 +252,20 @@ input[type="submit"]:active {
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .content-container {
+        --content-margin: 20%;
+    }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */
     .content-container {
-        --content-margin: 24%;
+        --content-margin: 25%;
     }
+}
+
+main {
+    background-color: var(--bg-main);
+    margin: 0;
+    padding: var(--padding-main);
 }
 
 #cf-ads {
@@ -105,46 +274,13 @@ input[type="submit"]:active {
     text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    margin-block: var(--vertical-margin-separator) 0;
-}
+/* -- End Main Container ------------------- --*/
 
-h1 {
-    font-size: 1.5em;
-}
-h2 {
-    font-size: 1.25em;
-}
-h3 {
-    font-size: 1.2em;
-}
-h4 {
-    font-size: 1.15em;
-}
-h5 {
-    font-size: 1.1em;
-}
-h6 {
-    font-size: 1.05em;
-}
 
-p.heading-sub {
-    font-size: 0.9em;
-    margin-block: 1em 0;
-    margin-left: 0.4em;
-}
-
-main {
-    background-color: var(--main-bg);
-    margin-bottom: 0;
-    margin-inline: 0;
-    padding: var(--main-padding);
-}
+/* -- Start General -------------------------- */
 
 main:not(.main-arch) {
-    margin-top: var(--vertical-margin-separator);
+    margin-top: var(--margin-vertical-separator);
 }
 
 .clear {
@@ -156,27 +292,24 @@ main:not(.main-arch) {
 }
 
 .reply {
-    margin-left: 40px;
+    margin-left: 2.5em;
 }
 
-fieldset, footer {
-    margin-top: var(--vertical-margin-separator);
-}
+/* -- End General ---------------------------- */
 
-/* -- Comic Page ----------------------------- */
+
+/* -- Start Header --------------------------- */
 
 header > nav {
     float: right;
-    text-align: right;
 }
 
-header > nav a:link,
-header > nav a:visited {
-    color: var(--link-color);
+header > nav a {
+    color: var(--color-link);
 }
 
 header > nav a:hover {
-    color: var(--navigation-color);
+    color: var(--color-navigation);
 }
 
 header > nav > ul {
@@ -187,48 +320,108 @@ header > nav > ul {
 }
 
 header > nav > ul > li:not(:first-child) {
-    margin-left: var(--navigation-margin);
+    margin-left: var(--margin-navigation);
 }
+
+.nav-separator {
+    cursor: default;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+/* -- End Header ----------------------------- */
+
+/* -- Start Footer --------------------------- */
+
+footer {
+    background-color: var(--bg-footer);
+    border-top: 1px solid var(--color-border);
+    margin-top: calc(2 * var(--margin-vertical-separator));
+    padding-block: 1.5em;
+    padding-inline: 5em;
+    text-align: center;
+}
+
+.footer-top {
+    align-items: center;
+    column-gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: .5em;
+    row-gap: .25em;
+}
+
+/* -- End Footer ----------------------------- */
+
+
+/* -- Start Comments ------------------------- */
 
 #author-notes {
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
-#comic-image-wrap {
-    text-align: center;
-    cursor: pointer;
+.author-data {
+    color: var(--color-author-name);
+    font-weight: bold;
 }
 
-#comic-image-wrap a, #comic-image-wrap img {
-    display: block;
+.author-data:hover * {
+    color: var(--color-comment-text-highlight);
 }
 
-#comic-image-wrap img {
-    height: auto;
-    width: 100%;
+.post-time {
+    color: var(--color-button);
+    float: right;
 }
 
-#comic-nav {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-inline: 20px;
-    margin-top: 15px;
-    text-align: center;
+.avatar {
+    float: left;
+    margin-bottom: .25em;
+    margin-right: 1.25em;
+}
+
+.comment {
+    clear: both;
+    padding-top: .625em;
+}
+
+.comment-content {
+    margin-right: 1.25em;
+    margin-top: 0.3em;
+}
+
+.comment-control {
+    float: right !important;
+}
+
+.comment-control a {
+    color: hsl(0, 0%, 31%);
+    margin-left: .75em;
+}
+
+.comment-control a:hover {
+    color: var(--color-comment-text-highlight);
+}
+
+.comment-data {
+    background-color: var(--bg-button);
+    padding-block: .25em;
+    padding-inline: .5em;
 }
 
 #comment-form {
     position: relative;
 }
 
-#comment-iframe-box-image {
-    height: auto;
-    opacity: 0.6;
-    pointer-events: none;
-    position: absolute;
-    right: 50px;
-    top: 160px;
-    width: 70px;
+#comment-iframe-overlay {
+    height: 100%;
+    width: 100%;
 }
 
 #comment-iframe-send-image {
@@ -240,45 +433,68 @@ header > nav > ul > li:not(:first-child) {
     width: 40px;
 }
 
-#comment-iframe-overlay {
+.post-comment {
+    background: var(--bg-button);
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-block: 1em;
+    padding-left: .625em;
+    padding-top: .375em;
+}
+
+/* -- End Comments ----------------------------*/
+
+
+/* -- Start Comic Page ----------------------- */
+
+#comic-image-wrap a,
+#comic-image-wrap img {
+    display: block;
+}
+
+#comic-image-wrap img {
+    height: auto;
+    width: 100%;
+}
+
+#backandforth {
+    display: flex;
+    position: absolute;
+}
+
+.prevoverlay,
+.nextoverlay {
+    flex: .5;
+}
+
+#backandforth a {
     height: 100%;
     width: 100%;
 }
 
-#cr-left {
-    float: left;
-}
-
-#cr-right {
-    float: right;
-}
-
-#save-place {
+#comic-nav {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1.25em;
+    margin-inline: 1.25em;
+    margin-top: 1em;
     text-align: center;
-    margin-bottom: 0px;
 }
 
-#vote-number {
-    font-size: 13px;
+.comic-nav-bar {
+    background-color: var(--bg-button);
+    color: var(--color-button);
+    display: inline-block;
+    flex: 1;
+    overflow-x: hidden;
+    position: static;
+    vertical-align: text-bottom;
+    white-space: nowrap;
 }
 
-.author-data, .author-data a:link, .author-data a:visited {
-    color: hsl(0, 0%, 67%);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.author-data a:hover  {
-    color: #DD0000;
-    font-style: normal;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.avatar {
-    float: left;
-    margin-bottom: 3px;
-    margin-right: 20px;
+.comic-nav-bar:hover {
+    cursor: pointer;
 }
 
 .comic-dropdown {
@@ -286,11 +502,11 @@ header > nav > ul > li:not(:first-child) {
 }
 
 .comic-dropdown-show {
-    background-color: var(--button-bg);
-    display: block !important;
+    background-color: var(--bg-button);
+    display: block;
     margin: 0;
     max-height: 400px;
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
     padding: 0;
     position: absolute;
@@ -298,80 +514,16 @@ header > nav > ul > li:not(:first-child) {
     z-index: 99;
 }
 
-.comic-nav-bar {
-    background-color: var(--button-bg);
-    color: var(--button-color);
-    display: inline-block;
-    margin-inline: 0px;
-    overflow-x: hidden;
-    position: static;
-    vertical-align: text-bottom;
-    white-space: nowrap;
-    width: 445px;
-}
-
-.comic-nav-bar:hover {
-    cursor: pointer;
-}
-
 .comic-nav-bar-list {
     display: none;
 }
 
 .comic-nav-bar-list-show {
-    background-color: var(--button-bg);
+    background-color: var(--bg-button);
     display: list-item !important;
     list-style-type: none;
     width: 445px;
-    z-index: 99!important;
-}
-
-.comic-nav-link {
-    margin-inline: 0px;
-}
-
-.comment {
-    clear: both;
-    padding-top: 10px;
-}
-
-.comment-bloc {
-    background: hsl(0, 0%, 11%);
-}
-
-.comment-content {
-    margin-right: 20px;
-    margin-top: 5px;
-}
-
-.comment-control {
-    float: right !important;
-}
-
-.comment-control a, .comment-control a:link, .comment-control a:visited {
-    color: hsl(0, 0%, 31%);
-    margin-left: 12px;
-    text-decoration: none;
-}
-
-.comment-control a:hover {
-    color: #DD0000;
-    text-decoration: none;
-}
-
-.comment-data {
-    background-color: var(--button-bg);
-    padding-block: 4px;
-    padding-inline: 8px;
-}
-
-.comment-iframe-overlay-bb-code-buttons{
-    position: absolute;
-    top: 71.2px;
-}
-
-.comment-text {
-    margin-left: 0px;
+    z-index: 99;
 }
 
 .dropdown-chapter {
@@ -403,132 +555,50 @@ header > nav > ul > li:not(:first-child) {
     background-color: hsl(0, 0%, 11%);
 }
 
-.space {
-    display: inline-block;
-    height: 24.8px;
-    vertical-align: bottom;
-    width: 20px;
+#cr-left {
+    float: left;
+}
+
+#cr-right {
+    float: right;
+}
+
+#save-place {
+    text-align: center;
 }
 
 .perma-link-code {
-    font-size: 12px;
-    font-weight: normal;
-    margin-inline: 10px;
+    font-size: .75em;
+    margin-inline: .625em;
 }
 
-.post-comment {
-    background: var(--button-bg);
-    font-size: 20px;
-    font-weight: bold;
-    margin-block: 15px;
-    padding-left: 10px;
-    padding-top: 5px;
-}
-
-.post-time {
-    color: var(--button-color);
-    float: right;
-    margin-left: 16px;
-}
-
-#backandforth {
-    display: flex;
-    height: 100px;
-    justify-content: space-between;
-    position: absolute;
-    width: 100px;
-
-}
-
-.prevoverlay {
-    background: transparent;
-    height: auto;
-    width: 50%;
-}
-
-.prevoverlay a {
-    height: 100%;
-    width: 100%;
-}
-
-.nextoverlay {
-    background: transparent;
-    height: auto;
-    width: 50%;
-}
-
-.nextoverlay a {
-    height: 100%;
-    width: 100%;
-}
-
-.nl-archivecomic {
-    background: hsla(0, 0%, 27%, 0.67);
-    color: hsl(0, 0%, 80%) !important;
-    display: inline-block;
-    font-size: 17px;
-    line-height: 35px;
-    margin-block: 2px;
-    margin-inline: 0px;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-.nl-archivecomic a:hover {
-    background: hsla(0, 0%, 52%, 0.67);
-}
-
-.nl-archivecomictitle {
-    display: inline-block;
-    width: 100%;
-}
+/* -- End Comic Page ------------------------- */
 
 
-/* -- Search --------------------------------- */
-
-form#big-search-form > fieldset > p {
-    display: flex;
-}
-
-input#big-search-box {
-    width: 100%;
-}
+/* -- Start Search --------------------------- */
 
 ul#search-results {
     margin-top: 1.5em;
     list-style: decimal;
 }
 
-ul#search-results > li:not(:first-child) {
-    padding-top: 0.3em;
-}
-
 .search-post-time {
-    color: var(--button-color);
-    margin-left: 2px;
+    color: var(--color-button);
+    margin-left: .25em;
 }
 
-/* -- Overview ------------------------------- */
+/* -- End Search ----------------------------- */
 
-#latest-comic {
-    text-align: center;
-}
 
-#latest-comic-link {
-    border: 0px;
-}
+/* -- Start Overview ------------------------- */
+/* -- End Overview --------------------------- */
 
-#latest-comic-link img {
-    border: 1px solid black;
-}
 
-/* -- Archive -------------------------------- */
+/* -- Start Archive -------------------------- */
 
 :root {
-    --grid-item-padding: 0.6em;
-    --grid-gap: 10px;
+    --grid-item-padding: .6em;
+    --grid-gap: .625em;
 }
 
 .content-container#archive-container {
@@ -541,7 +611,7 @@ ul#search-results > li:not(:first-child) {
 }
 
 aside {
-    padding-left: var(--main-padding);
+    padding-left: var(--padding-main);
 }
 
 aside * {
@@ -583,20 +653,20 @@ aside > *:not(:first-child) {
 
 .buttonimg:hover,
 .top-button a img:hover {
-    --card-transition-time: .6s;
-    --card-transition-animation: linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
     transform: scale(1.1);
-    transition: transform var(--card-transition-time) var(--card-transition-animation);
+    transition: transform var(--transition-time) var(--transition-animation);
 }
 
 .top-buttons {
     display: flex;
     margin-block: 3%;
 }
+
 .top-button {
     flex: 1;
     text-align: center;
 }
+
 .top-button a {
     color: hsl(0, 0%, 95%);
     display: block;
@@ -608,14 +678,17 @@ aside > *:not(:first-child) {
 }
 
 #top-blog {
-    background-color: var(--main-bg);
+    background-color: var(--bg-main);
 }
+
 #top-corkboard {
     background-color: black;
 }
+
 #top-subscribe {
     background-color: #c60838;
 }
+
 #top-amazon {
     background-color: #232f3f;
 }
@@ -630,7 +703,7 @@ header > img {
     flex-wrap: wrap;
     gap: .5em;
     justify-content: flex-end;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
 }
 
 #search-bar > input[type="text"] {
@@ -642,25 +715,55 @@ section#archive-box {
     grid-gap: var(--grid-gap);
 }
 
+#nl-archive  {
+    word-break: break-word;
+}
+
+.nl-archivecomic {
+    background: var(--bg-comic-button);
+    display: inline-block;
+    font-size: 1em;
+    margin-block: .125em;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.nl-archivecomic a:hover {
+    background: var(--bg-comic-button-hover);
+}
+
+.nl-archivecomictitle {
+    display: inline-block;
+    padding-block: .33em;
+    width: 100%;
+}
+
 .grid-item {
     word-break: break-word;
 }
 
 .grid-item > * {
-    background: var(--button-bg);
+    background: var(--bg-button);
 }
 
-.grid-item:not(.grid-item-toggled) > .chapter-data:hover {
-    background: hsl(0, 0%, 30%);
+.grid-item:not(.grid-item-toggled) > .chapter-data:hover,
+.grid-item.button > a:hover {
+    background: var(--bg-button-hover);
 }
 
 .grid-item.button {
     text-align: center;
 }
 
+.grid-item.button > *,
+.nl-archivecomic {
+    color: var(--color-archive-button);
+}
+
 .grid-item.button > * {
-    border-bottom: calc(var(--grid-item-padding) / 2) solid var(--button-color);
-    color: hsl(0, 0%, 80%);
+    border-bottom: calc(var(--grid-item-padding) / 2) solid var(--color-button);
     display: block;
     font-size: 1.3em;
     padding-bottom: calc(var(--grid-item-padding) / 2);
@@ -668,19 +771,14 @@ section#archive-box {
     padding-top: var(--grid-item-padding);
 }
 
-.grid-item.button:hover {
-    background-color: hsl(0, 0%, 40%);
-    font-weight: bold;
-}
 .grid-item > .chapter-cover {
-    line-height: 0;
     width: fit-content;
 }
 
 .grid-item-toggled > .chapter-cover {
     --chapter-cover-toggled-pad: 1em;
-    border-bottom: var(--main-bg) 1px solid;
-    border-left: var(--main-color) .75em ridge;
+    border-bottom: var(--bg-main) 1px solid;
+    border-left: var(--color-main) .75em ridge;
     border-top-right-radius: 1em;
     padding-bottom: calc(var(--chapter-cover-toggled-pad) * .5);
     padding-left: calc(var(--chapter-cover-toggled-pad) * 1);
@@ -689,7 +787,7 @@ section#archive-box {
     position: relative;
 }
 .grid-item-toggled > .chapter-cover:after {
-    border-color: transparent var(--main-bg) transparent transparent;
+    border-color: transparent var(--bg-main) transparent transparent;
     border-style: solid;
     border-width: 0 1.5em 1em 0;
     content: '';
@@ -700,17 +798,13 @@ section#archive-box {
     width: 0;
 }
 
-.grid-item > .chapter-cover > a {
-    display: inline-block;
-    text-align: left;
-}
-
 .grid-item > .chapter-cover > a:hover {
-    box-shadow: 0 0 4px 2px var(--main-color);
+    box-shadow: 0 0 4px 2px var(--color-main);
     position: relative;
 }
 
 .grid-item > .chapter-cover > a > img {
+    display: block;
     height: auto;
     max-width: 100%;
 }
@@ -721,8 +815,13 @@ section#archive-box {
     word-break: break-word;
 }
 
+.grid-item-toggled > .chapter-data {
+    border-top-right-radius: var(--radius-border);
+}
+
 .grid-item-toggled > .chapter-data + .nl-chapter-wrapper {
     display: block;
+    border-radius: 0 0 var(--radius-border) var(--radius-border);
 }
 
 .grid-item > .chapter-data {
@@ -750,7 +849,8 @@ section#archive-box {
     grid-template-columns: repeat(var(--current-grid-columns), 1fr);
 }
 
-#archive-box .grid-item:nth-child(n+1):nth-child(-n+3) {
+#archive-box .grid-item:nth-child(n+1):nth-child(-n+3),
+#archive-box .grid-item.button.span-full {
     grid-column: span var(--current-grid-columns);
 }
 
@@ -795,7 +895,7 @@ section#archive-box {
 @media (min-width:1281px) { /* hi-res laptops and desktops */
     .content-container#archive-container {
         --aside-width: 240px;
-        margin-right: calc(var(--content-margin) - var(--main-padding) - var(--aside-width));
+        margin-right: calc(var(--content-margin) - var(--padding-main) - var(--aside-width));
     }
     .content-container aside {
         display: block;
@@ -809,10 +909,13 @@ section#archive-box {
     grid-column: span var(--current-grid-columns)!important;
 }
 
-/* -- Blog ----------------------------------- */
+/* -- End Archive ---------------------------- */
+
+
+/* -- Start Blog ----------------------------- */
 
 .after-heading{
-    background: var(--button-bg);
+    background: var(--bg-button);
     padding: 1em;
 }
 
@@ -893,18 +996,25 @@ section#archive-box {
     width: 50%;
 }
 
-/* -- Error Page ----------------------------- */
+
+/* -- End Blog ------------------------------- */
+
+
+/* -- Start Error Page ----------------------- */
 
 #error-message-quote {
-    color: rgb(100, 0, 0);
-    font-family: "calibri";
-    font-size: 36px;
+    color: var(--color-error);
+    font-size: 1.5em;
     font-style: oblique;
-    font-weight: 1000;
-    margin-top: 40px;
+    font-weight: bold;
+    margin-top: 1.5em;
+    text-align: center;
 }
 
-/* -- Scrollbar ------------------------------ */
+/* -- End Error Page ------------------------- */
+
+
+/* -- Start Scrollbar ------------------------ */
 
 ::-webkit-scrollbar {
     width: 15px;
@@ -925,3 +1035,5 @@ section#archive-box {
 ::-webkit-scrollbar-track-piece {
     background: hsl(0, 0%, 11%);
 }
+
+/* -- End Scrollbar -------------------------- */

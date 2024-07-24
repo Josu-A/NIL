@@ -63,30 +63,31 @@
 </head>
 <body>
     <div id="container">
-    [c:bannerads]
+        [c:bannerads]
         <!-- voluntary CF support ads, you can turn these off in your webcomic settings -->
         <article id="cf-ads">
             [v:banneradcode]
         </article>
-    [/]
-    [c:isextrapage]
+        [/]
+        [c:isextrapage]
         <h2>[v:pagetitle]</h2>
         <div class="after-heading">
-    [/]
-        <!--layout:[content]-->
-    [c:isextrapage]
+        [/]
+            <!--layout:[content]-->
+        [c:isextrapage]
         </div>
-    [/]
+        [/]
     </div>
     <footer>
-        <a href="/rss/">RSS</a>
-        <span> | </span>
-        <a href="https://comicfury.com">ComicFury</a>
-        <span> | </span>
-        <a href="https://comicfury.com/comicprofile.php?url=nil-canticum-bellum">Comic Profile</a>
-        <span> | </span>
-        <a href="#">Top</a>
-        <br />
+        <div class="footer-top">
+            <a href="/rss/">RSS</a>
+            <span class="nav-separator">|</span>
+            <a href="https://comicfury.com">ComicFury</a>
+            <span class="nav-separator">|</span>
+            <a href="https://comicfury.com/comicprofile.php?url=nil-canticum-bellum">Comic Profile</a>
+            <span class="nav-separator">|</span>
+            <a href="#">Top</a>
+        </div>
         <span>&copy; [v:copyrights]</span>
     </footer>
 </body>

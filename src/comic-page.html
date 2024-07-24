@@ -3,25 +3,29 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/archive/">Home</a> |
+                    <a href="/archive/">Home</a>
                 </li>
+                <li class="nav-separator">|</li>
                 <li>
-                    <a href="[v:addsubscriptionlink]">Subscribe</a> |
+                    <a href="[v:addsubscriptionlink]">Subscribe</a>
                 </li>
+                <li class="nav-separator">|</li>
                 <li>
-                    <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a> |
+                    <a href="#" onclick="loadPlace();return false;" title="Load from My Place">Load My Place</a>
                 </li>
             </ul>
         </nav>
-        <h2 title="Comic [v:comicnumber] - [v:comictitle]">Comic [v:comicnumber] - [v:comictitle]</h2>
-        <p class="heading-sub">
-            <time datetime="[v:posttime]"><strong>[v:posttime]</strong></time><br>
-            [c:usechapters]
-            [c:haschapter]
-                <small>in <a href="[v:chapterlink]">[v:chaptername]</a></small>
-            [/]
-            [/]
-        </p>
+        <hgroup>
+            <h2 title="Comic [v:comicnumber] - [v:comictitle]">Comic [v:comicnumber] - [v:comictitle]</h2>
+            <p class="heading-sub">
+                <time datetime="[v:posttime]"><strong>[v:posttime]</strong></time><br>
+                [c:usechapters]
+                [c:haschapter]
+                    <small>in <a href="[v:chapterlink]">[v:chaptername]</a></small>
+                [/]
+                [/]
+            </p>
+        </hgroup>
     </header>
     <main>
         <section id="comic-page">
@@ -41,9 +45,7 @@
             <nav id="comic-nav">
                 [c:!isfirstcomic]
                 <a href="/comics/first/" rel="start" class="comic-nav-link" title="Go to first comic">&lt;&lt;First</a>
-                <div class="space"></div>
                 <a href="[v:prevcomic]/" rel="prev" class="comic-nav-link" title="Go to previous comic">&lt;Previous</a>
-                <div class="space"></div>
                 [/]
                 <div class="comic-nav-bar">
                     [v:pagetitle]
@@ -66,9 +68,7 @@
                     </ul>
                 </div>
                 [c:!islastcomic]
-                <div class="space"></div>
                 <a href="[v:nextcomic]/" rel="next" class="comic-nav-link" title="Go to next comic">Next&gt;</a>
-                <div class="space"></div>
                 <a href="/comics/" rel="index" class="comic-nav-link" title="Go to latest comic">Latest&gt;&gt;</a>
                 [/]
             </nav>
